@@ -1,0 +1,15 @@
+### CREATE PRODUCT
+POST http://localhost:5000/api/products/new HTTP/1.1
+Content-Type: application/json
+token: h eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjYjYwY2MxOTYzMTA3MDYzNWJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzODE5MzA4MSwiZXhwIjoxNjM4NDUyMjgxfQ.ZMYbHAKjMRWsryVLNItm7alhoU8Bv6IfIVRcX5a6QDM
+
+{
+  "title": "dress LV",
+"description": "long red dress for women make by the famous Louis Vuitton",
+"img": "ImgDressLv",
+"categories": "dress",
+"size": "M",
+"color": "red",
+"price": 20
+}
+

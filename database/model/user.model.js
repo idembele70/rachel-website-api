@@ -1,8 +1,8 @@
-import { Schema, model } from 'mongoose'
+const { Schema, model }= require('mongoose')
 
 const userSchema = Schema({
   username: {
-    type :String,
+    type : String,
     required: true,
     unique : true
   },
@@ -25,4 +25,4 @@ const userSchema = Schema({
 
 const User = model("users", userSchema)
 
-export default User
+module.exports =  User
