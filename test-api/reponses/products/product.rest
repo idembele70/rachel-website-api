@@ -1,0 +1,37 @@
+### CREATE
+POST http://localhost:5000/api/products/new HTTP/1.1
+token:" eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjYjYwY2MxOTYzMTA3MDYzNWJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzODUzNjA1OSwiZXhwIjoxNjM4Nzk1MjU5fQ.H6zUIkqKZ72LCqKUbv41uSPG74vnRby2_-rNimyLKIM
+Content-Type: application/json
+
+{
+"title": "puma t-shirtssss",
+"description": "a puma t-shirts !",
+"img": "Imgpumatees",
+"categories": ["t-shirts","man"],
+"size": "M",
+"color": "gray",
+"price": 30
+}
+
+
+### UPDATE
+PUT http://localhost:5000/api/products/61aa13a8977a379c4e67c62c HTTP/1.1
+Content-Type: application/json
+token: " eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjYjYwY2MxOTYzMTA3MDYzNWJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzODUzNjA1OSwiZXhwIjoxNjM4Nzk1MjU5fQ.H6zUIkqKZ72LCqKUbv41uSPG74vnRby2_-rNimyLKIM
+
+{
+  "title" : "puma t-shirt"
+}
+
+
+### DELETE
+
+DELETE http://localhost:5000/api/products/61aa13a8977a379c4e67c62c
+token: a eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjYjYwY2MxOTYzMTA3MDYzNWJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzODUzNjA1OSwiZXhwIjoxNjM4Nzk1MjU5fQ.H6zUIkqKZ72LCqKUbv41uSPG74vnRby2_-rNimyLKIM
+
+### GET ONE PRODUCT
+GET http://localhost:5000/api/products/find/61a4e9dd325d9d6621660e1b
+
+### GET ALL PRODUCTS
+
+GET http://localhost:5000/api/products
