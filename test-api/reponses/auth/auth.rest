@@ -4,9 +4,9 @@ POST http://localhost:5000/api/auth/register HTTP/1.1
 Content-Type: application/json
 
 {
-  "username" : "toto",
-  "email" : "toto@mail.fr",
-  "password" : "toto"
+  "username" : "mama",
+  "email" : "mama@mail.fr",
+  "password" : "mama"
 }       
 
 ### LOGIN
@@ -15,6 +15,6 @@ POST http://localhost:5000/api/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
-  "username": "titi",
-  "password": "titi"
+  "username": "admin",
+  "password": "admin"
 }

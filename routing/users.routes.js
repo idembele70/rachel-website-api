@@ -71,11 +71,13 @@ router.get("/stats", verifyTokenAndAdmin, async (req, res) => {
       {
         $project: {
           month: { $month: "$createdAt" },
+          year: { $year: "$createdAt" }
         },
       },
       {
         $group: {
           _id: "$month",
+          year: {$avg: "$year"},
           total: { $sum: 1 },
         },
       }
@@ -87,3 +89,4 @@ router.get("/stats", verifyTokenAndAdmin, async (req, res) => {
 })
 
 module.exports = router
+

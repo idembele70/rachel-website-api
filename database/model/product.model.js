@@ -5,9 +5,14 @@ const productSchema = Schema({
    description: { type: String, required: true },
    img: { type: String, required: true },
    categories: { type: Array },
-   size: { type: String },
-   color: { type: String },
-   price: { type: Number, required: true }
+   sizes: { type: Array },
+   colors: { type: Array },
+   price: { type: Number, required: true },
+   quantity: {
+      type: Number,
+      default: 0,
+      required: true
+   }
 },
    { timestamps: true }
 )
@@ -15,3 +20,4 @@ const productSchema = Schema({
 const Product = model("product", productSchema)
 
 module.exports = Product
+

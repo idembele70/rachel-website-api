@@ -2,3 +2,4 @@ MONGO_URL = mongodb+srv://username:<password>@cluster0.qbkl3.mongodb.net/myFirst
 PORT = 5000
 PASSWORD_SECRET_KEY = XXXX
 JWT_SECRET_KEY = XXXX
+STRIPE_SECRET_KEY = XXXX

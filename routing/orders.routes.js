@@ -35,21 +35,30 @@ router.delete("/:id", verifyTokenAndAdmin, async (req, res) => {
 
 // Income state
 router.get("/income", verifyTokenAndAdmin, async (req, res) => {
-  const date = new Date()
-  const lastMonth = new Date(date.setMonth(date.getMonth() - 1))
-  const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1))
+  const productId = req.query.productId
+  const lastMonth = new Date(new Date().setDate(0))
+  const twoMonthAgo = new Date(lastMonth.setDate(0))
+
   try {
     const income = await Order.aggregate([
-      { $match: { createdAt: { $gte: previousMonth } } },
+      {
+        $match: {
+          createdAt: { $gte: twoMonthAgo }, ...(productId && {
+            products: { $elemMatch: { productId } }
+          })
+        }
+      },
       {
         $project: {
           month: { $month: "$createdAt" },
+          year: { $year: "$createdAt" },
           sales: "$amount",
         },
       },
       {
         $group: {
           _id: "$month",
+          year: { $avg: "$year" },
           total: { $sum: "$sales" },
         },
       },
@@ -68,7 +77,7 @@ router.get("/:userId", verifyTokenAndAuthorization, async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-}); 
+});
 
 // GET users order
 router.get("/", verifyTokenAndAdmin, async (req, res) => {

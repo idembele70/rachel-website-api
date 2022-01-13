@@ -5,7 +5,6 @@ const router = require("express").Router()
 // CREATE
 router.post("/new", verifyTokenAndAdmin, async (req, res) => {
   const newProduct = new Product(req.body)
-
   try {
     const savedProduct = await newProduct.save()
     res.status(200).json(savedProduct)
@@ -59,12 +58,19 @@ router.get("/", async (req, res) => {
   const qCategory = req.query.category
   try {
     let products
-    if (qNew) {
-      products = await Product.find().sort({ createdAt: -1 }).limit(5)
-    } else if (qCategory) {
-      products = await Product.find({ categories: { $in: [qCategory] } })
-    } else {
-      products = await Product.find()
+    switch (true) {
+      case qNew:
+        products = await Product.find().sort({ createdAt: -1 }).limit(5)
+        break;
+      case qCategory:
+        products = await Product.find({ categories: { $in: [qCategory] } })
+        break;
+      case qCategory:
+        products = await Product.find({ categories: { $in: [qCategory] } })
+        break;
+      default:
+        products = await Product.find()
+        break;
     }
     res.status(200).json(products)
   } catch (err) {

@@ -1,49 +1,45 @@
 ### CREATE
 POST http://localhost:5000/api/orders/new HTTP/1.1
 Content-Type: application/json
-token : e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjYjYwY2MxOTYzMTA3MDYzNWJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzOTA1MDY4OSwiZXhwIjoxNjM5MzA5ODg5fQ.cAwb6fIehHGr4GQ1VueCboNgkHEpR-nJkbjBo3Eqxs4
+token : e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTRkYzk1MDc5NzIzZjAzOGExNmY1YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU3MDEyNiwiZXhwIjoxNjQxODI5MzI2fQ.6G7iZLv7sErvn5Ce5d8-4bKGGaFMSPt6mLsqSW6VzGE
 
 {
   "userId": "619bcb60cc19631070635be9",
   "products": [
     {
-      "productId" : "61a4e9dd325d9d6621660e1b",
-      "quantity" : 9
-    },
-    {
-      "productId" : "61aa16c268028b5665de99cd",
-      "quantity" : 8
+      "productId" : "61be65c42974aea7e9b60a5d",
+      "quantity" : 10
     }
 ],
-"amount" : 8000,
-"address" : "18 avenue de muret"
+"amount" : 10000,
+"address" : "18 rue de la republique-31300-Toulouse"
 }
 
 ### UPDATE
 PUT http://localhost:5000/api/orders/61b2041f4435c98c45dde442 HTTP/1.1
-token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjYjYwY2MxOTYzMTA3MDYzNWJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzOTA1MDY4OSwiZXhwIjoxNjM5MzA5ODg5fQ.cAwb6fIehHGr4GQ1VueCboNgkHEpR-nJkbjBo3Eqxs4
+token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTRkYzk1MDc5NzIzZjAzOGExNmY1YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU3MDEyNiwiZXhwIjoxNjQxODI5MzI2fQ.6G7iZLv7sErvn5Ce5d8-4bKGGaFMSPt6mLsqSW6VzGE
 Content-Type: application/json
 
 {
 "products":[
    {
-      "productId" : "61a4e9dd325d9d6621660e1b", "quantity": "20"
+      "productId" : "61be65c42974aea7e9b60a5d", "quantity": "2"
     }],
-    "amount" : 300,
-    "address" : "8 rue du taur"
+    "amount" : 6000,
+    "address" : "18 rue de la republique-31300-Toulouse"
 }
 ### DELETE
 DELETE http://localhost:5000/api/orders/61b2341bf6068563a012704d HTTP/1.1
-token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjYjYwY2MxOTYzMTA3MDYzNWJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzOTA1MDY4OSwiZXhwIjoxNjM5MzA5ODg5fQ.cAwb6fIehHGr4GQ1VueCboNgkHEpR-nJkbjBo3Eqxs4
+token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTRkYzk1MDc5NzIzZjAzOGExNmY1YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU3MDEyNiwiZXhwIjoxNjQxODI5MzI2fQ.6G7iZLv7sErvn5Ce5d8-4bKGGaFMSPt6mLsqSW6VzGE
 
 ### GET USER ORDERS
 GET http://localhost:5000/api/orders/619bcb60cc19631070635be9
-token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjYjYwY2MxOTYzMTA3MDYzNWJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzOTA1MDY4OSwiZXhwIjoxNjM5MzA5ODg5fQ.cAwb6fIehHGr4GQ1VueCboNgkHEpR-nJkbjBo3Eqxs4
+token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTRkYzk1MDc5NzIzZjAzOGExNmY1YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU3MDEyNiwiZXhwIjoxNjQxODI5MzI2fQ.6G7iZLv7sErvn5Ce5d8-4bKGGaFMSPt6mLsqSW6VzGE
 
 ### GET ALL ORDERS
 GET http://localhost:5000/api/orders/ HTTP/1.1
-token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjYjYwY2MxOTYzMTA3MDYzNWJlOSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzOTA1MDY4OSwiZXhwIjoxNjM5MzA5ODg5fQ.cAwb6fIehHGr4GQ1VueCboNgkHEpR-nJkbjBo3Eqxs4
+token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTRkYzk1MDc5NzIzZjAzOGExNmY1YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTU3MDEyNiwiZXhwIjoxNjQxODI5MzI2fQ.6G7iZLv7sErvn5Ce5d8-4bKGGaFMSPt6mLsqSW6VzGE
 
 ### GET INCOME
 GET http://localhost:5000/api/orders/income HTTP/1.1
-token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTRkYzk1MDc5NzIzZjAzOGExNmY1YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzOTIxODUzNywiZXhwIjoxNjM5NDc3NzM3fQ.Gv8DNBrLgLAxU3OrQaHhv0G_D4sqCnEc_huWQrPj5g8
+token: e eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTRkYzk1MDc5NzIzZjAzOGExNmY1YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTMxMDc1NSwiZXhwIjoxNjQxNTY5OTU1fQ.IJd0uDt6s7zzlMmBNzoN6W-iFYripf7zvxGbLz3b6ZI
