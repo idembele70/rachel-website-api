@@ -1,6 +1,6 @@
 ### CREATE
 POST http://localhost:5000/api/products/new HTTP/1.1
-token:" eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTRkYzk1MDc5NzIzZjAzOGExNmY1YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MTgxOTMyOCwiZXhwIjoxNjQyMDc4NTI4fQ.rzaOoJoatWdXFpMKjwxBg_qMwEtmcdIYb5xdyTFgSlc
+token:" "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTRkYzk1MDc5NzIzZjAzOGExNmY1YSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MjIwMTE1OCwiZXhwIjoxNjQyNDYwMzU4fQ.31nCQSkaEQ2a7GF20kFOdWV6zESTBTMM2cXWQn7KRVg
 Content-Type: application/json
 
 {
